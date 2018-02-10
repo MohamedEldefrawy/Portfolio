@@ -1,0 +1,20 @@
+{% extends "HomePage/header.html" %} {% block content %} {% for project in projects %}
+<div class="row" style="background-color: #121212;">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <div class="card p-1 m-4">
+            <div class="card-body bg-dark" style="height:auto; width: auto;">
+                <h4 class="card-title">{{project.type}}</h4>
+                <h6 class="card-subtitle mb-2 text-muted">{{project.name}}</h6>
+                <figure class="figure">
+                    <img src="{{project.projectLogo}}" alt="{{project.name}}" class="img-fluid img-thumbnail round" style="height: 200px; width: 200px;">
+                    <figcaption class="figure-caption">-{{project.name}}</figcaption>
+                </figure>
+                <p class="card-text">{{project.description}} </p>
+                <a href="{{project.refrence}}" class="card-link" target="_blank"><strong>Check it out</strong></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+</div>
+{% endfor %} {% endblock content %}

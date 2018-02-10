@@ -1,0 +1,14 @@
+ {% extends "HomePage/header.html" %} {% block content %}
+<div id="Achievements" class="row" style="background-color: #121212;">
+    <ul class="list-group m-4">
+        {% for achievement in achievements %}
+        <li class="list-group-item bg-white"><strong>{{achievement.name}}: </strong>{{achievement.description}}
+            <a href="{{achievement.refrence}}" target="_blank">
+                <strong <em>check out</em>
+                </strong>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

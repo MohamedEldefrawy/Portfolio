@@ -1,0 +1,66 @@
+<!doctype html>
+<!--Head contains links to the external files -->
+
+{% load static from staticfiles %}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Mohamed Eldfrawy</title>
+    <link rel="stylesheet" href="{% static 'css/myStyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+
+<!--Body Contains the body of the HomePage-->
+
+<body style="background-color:#333434">
+
+    <!--Main div (Container) -->
+    <div class="container-flow row m-4">
+        <div class="col-md-2"></div>
+
+        <!--Main Card-->
+        <div id="layout" class="col-md-8 border-shadow">
+
+            <!--NavBar-->
+            <nav class="navbar navbar-expand-md  navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#aboutDiv"> MohamedEldfrawy </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="#myNavbar" aria-expanded="false">
+                                        <span class="navbar-toggler-icon"></span>                          
+                                        </button>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a id="homeAnchor" class="nav-link" href="/home"><i class="fa fa-home" aria-hidden="true"></i> Home </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="portfolioAnchor" class="nav-link" href="/projects"><i class="fa fa-file" aria-hidden="true"></i> Projects </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="AchievAnchor" class="nav-link" href="/achievement"><i class="fa fa-trophy" aria-hidden="true"></i> Achievement </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="AchievAnchor" class="nav-link" href="#"><i class="fa fa-id-card" aria-hidden="true"></i> Resume </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="contactAnchor" class="nav-link" href="#"><i class="fa fa-phone" aria-hidden="true"></i> Contact </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div id="mainBody">
+
+                <!--Body of the page snippet-->
+                {% block content %} {% endblock content %}
+
+            </div>
+
+            <!--Footer snippet-->
+            {% include "HomePage/includes/footer.html" %}
+        </div>
+
+        <!--Scripts snippet-->
+        {% include "HomePage/includes/script.html" %}
+</body>
